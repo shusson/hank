@@ -21,9 +21,9 @@ export class AppComponent implements OnInit {
         new Service("health services", ['hospital', 'doctor'], 'hospital doctor', false),
         new Service("gym services", ['gym'], 'gym', false),
         new Service("park services", ['park'], 'park', false),
-        new Service("junk food services", [''], 'Fast Food', true),
+        new Service("junk food services", [''], 'Fast Food', false),
         new Service("pool Services", [], 'Pools', false),
-        new Service("school services", ['school, university', 'library'], 'school', true),
+        new Service("school services", ['school, university', 'library'], 'school', false),
         new Service("alcohol services", [], 'bottle shop', true),
     ];
 
@@ -32,9 +32,13 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.suburbs = postcodes.slice(0, 10);
+        this.suburbs = postcodes.slice(0, 3);
         // const s = postcodes.find((p) => p.postcode === 2010);
+        this.updateBurbs();
 
+    }
+
+    updateBurbs() {
         this.suburbs.forEach((s, index: number) => {
             window.setTimeout(() => {
                 this.services.forEach((hs) => {
@@ -70,5 +74,10 @@ export class AppComponent implements OnInit {
             }
             console.log(s);
         });
+    }
+
+    updateServices(hs) {
+        hs.active = !hs.active;
+        this.updateBurbs();
     }
 }

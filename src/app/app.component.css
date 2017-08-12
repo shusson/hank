@@ -1,0 +1,15 @@
+.overview {
+    height: 1000px;
+}
+
+md-sidenav-container {
+    height: 100%;
+}
+
+md-sidenav {
+    height: 100%;
+}
+
+.main {
+    padding: 1rem;
+}
