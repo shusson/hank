@@ -11,20 +11,21 @@
                 </md-list-item>
             </md-list>
         </md-sidenav>
-        <div class="main">
-            <div *ngFor="let s of suburbs">
-                <h4>{{ s.place_name }}</h4>
-                <div class="services">
-                    <div class="service" *ngFor="let hs of services">
-                        <div class="suburb-service" *ngIf="hs.active && s[hs.id] !== null && s[hs.id] !== undefined">
-                            {{ s[hs.id].length }} {{hs.name}}
+        <div class="split">
+            <div class="main">
+                <div *ngFor="let s of suburbs">
+                    <h3>{{ s.place_name }}</h3>
+                    <div class="services">
+                        <div class="service" *ngFor="let hs of services">
+                            <div class="suburb-service" *ngIf="hs.active && s[hs.id] !== null && s[hs.id] !== undefined">
+                                <span class="number">{{ s[hs.id].length }}<span *ngIf="s[hs.id].length === 60">+</span></span> {{hs.name}}
+                            </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
-
     </md-sidenav-container>
 </div>
 

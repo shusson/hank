@@ -6,23 +6,23 @@ const postcodes = require('./postcodes.json');
 const services = require('./services.json');
 
 filters = {
-    "hospitals": {id: "hospitals", name: "Hospitals", type: "hospital", query: 'hospital', good: true, active: true},
-    "doctors": {id: "doctors", name: "Doctors", type: "doctor", query: 'doctor', good: true, active: true},
-    "dentist": {id: "dentist", name: "Dentists", type: "dentist", query: 'dentist', good: true, active: true},
-    "pharmacy": {id: "pharmacy", name: "Pharmacies", type: "pharmacy", query: 'pharmacy', good: true, active: true},
-    "physiotherapist": {id: "physiotherapist", name: "Physiotherapists", type: "physiotherapist", query: 'physiotherapist', good: true, active: true},
-    "fitness": {id: "fitness", name: "Gymns", type: "gym", query: 'gym', good: true, active: true},
-    "parks": {id: "parks", name: "Parks", type: "park", query: 'park', good: true, active: true},
-    "schools": {id: "schools", name: "Schools", type: "school", query: 'school', good: true, active: true},
-    "university": {id: "university", name: "Universities", type: "university", query: 'university', good: true, active: true},
-    "library": {id: "library", name: "Libraries", type: "library", query: 'library', good: true, active: true},
-    "train_station": {id: "train_station", name: "Train stations", type: "train_station", query: 'train', good: true, active: true},
-    "alcohol": {id: "alcohol", name: "Liquor stores", type: "liquor_store", query: 'bottle', good: false, active: true},
-    "mcd": {id: "mcd", name: "McDonald stores", type: "restaurant", query: 'mcdonalds', good: false, active: true},
-    "kfc": {id: "kfc", name: "KFC stores", type: "restaurant", query: 'kfc', good: false, active: true},
-    "meal_takeaway": {id: "meal_takeaway", name: "Takeaway restaurants", type: "meal_takeaway", query: '', good: false, active: true},
-    "gas_station": {id: "gas_station", name: "Petrol stations", type: "gas_station", query: 'petrol', good: false, active: true},
-    "dominos": {id: "dominos", name: "Dominos stores", type: "restaurant", query: 'dominos', good: false, active: true}
+    "hospitals": {id: "hospitals", name: "Hospitals", type: "hospital", query: 'hospital', category: "health", good: true, active: true},
+    "doctors": {id: "doctors", name: "Doctors", type: "doctor", query: 'doctor', category: "health", good: true, active: true},
+    "dentist": {id: "dentist", name: "Dentists", type: "dentist", query: 'dentist', category: "health", good: true, active: true},
+    "pharmacy": {id: "pharmacy", name: "Pharmacies", type: "pharmacy", query: 'pharmacy', category: "health", good: true, active: true},
+    "physiotherapist": {id: "physiotherapist", name: "Physios", type: "physiotherapist", category: "health", query: 'physiotherapist', good: true, active: true},
+    "fitness": {id: "fitness", name: "Gyms", type: "gym", query: 'gym', category: "fitness", good: true, active: true},
+    "parks": {id: "parks", name: "Parks", type: "park", query: 'park', category: "fitness", good: true, active: true},
+    "schools": {id: "schools", name: "Schools", type: "school", query: 'school', category: "education", good: true, active: true},
+    "university": {id: "university", name: "Universities", type: "university", query: 'university', category: "education", good: true, active: true},
+    "library": {id: "library", name: "Libraries", type: "library", query: 'library', category: "education", good: true, active: true},
+    "train_station": {id: "train_station", name: "Train stations", type: "train_station", query: 'train', category: "transport", good: true, active: true},
+    "gas_station": {id: "gas_station", name: "Petrol stations", type: "gas_station", query: 'petrol', category: "transport", good: false, active: true},
+    "alcohol": {id: "alcohol", name: "Liquor stores", type: "liquor_store", query: 'bottle', category: "food", good: false, active: true},
+    "mcd": {id: "mcd", name: "McDonalds", type: "restaurant", query: 'mcdonalds', category: "food", good: false, active: true},
+    "kfc": {id: "kfc", name: "KFCs", type: "restaurant", query: 'kfc', good: false, category: "food", active: true},
+    "meal_takeaway": {id: "meal_takeaway", name: "Takeaways", type: "meal_takeaway", category: "food", query: '', good: false, active: true},
+    "dominos": {id: "dominos", name: "Dominos", type: "restaurant", query: 'dominos', category: "food", good: false, active: true}
 };
 
 app.all('*', function(req, res, next) {
@@ -77,7 +77,7 @@ app.listen(3000, function () {
         const c = [suburb.latitude, suburb.longitude];
         const request = {
             location: c,
-            radius: 1000,
+            radius: 1500,
             type: filter.type,
             keyword: filter.query,
             pagetoken: pagetoken

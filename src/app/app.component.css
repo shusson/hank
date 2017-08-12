@@ -11,6 +11,13 @@ md-sidenav {
 }
 
 .main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+}
+
+.split {
+    display: flex;
     padding: 1rem;
 }
 
@@ -26,9 +33,18 @@ md-sidenav {
 .services {
     display: flex;
     flex-wrap: wrap;
-    max-width: 300px;
+    width: 400px;
 }
 
 .services .service {
-    margin: 10px;
+    margin: 5px;
+    min-width: 120px;
+}
+
+.service .number {
+    min-width: 35px;
+}
+
+.charts {
+    height: 1000px;
 }
