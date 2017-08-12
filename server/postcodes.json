@@ -7,7 +7,7 @@
         "latitude": -33.8678,
         "longitude": 151.2073,
         "accuracy": 4,
-        "population": 17,252,
+        "population": 17252,
         "poor_health": 0.15
     },
     {
@@ -18,7 +18,7 @@
         "latitude": -33.8983,
         "longitude": 151.1775,
         "accuracy": 4,
-        "population": 15,029,
+        "population": 15029,
         "poor_health": 0.16
     },
     {
@@ -29,7 +29,7 @@
         "latitude": -33.798,
         "longitude": 151.2883,
         "accuracy": 4,
-        "population": 15,866,
+        "population": 15866,
         "poor_health": 0.08
     },
     {
@@ -40,7 +40,7 @@
         "latitude": -33.839,
         "longitude": 151.2072,
         "accuracy": 4,
-        "population": 7,705,
+        "population": 7705,
         "poor_health": 0.08
     },
     {
@@ -51,7 +51,7 @@
         "latitude": -33.926,
         "longitude": 151.1935,
         "accuracy": 4,
-        "population": 14,772,
+        "population": 14772,
         "poor_health": 0.16
     },
     {
@@ -62,7 +62,7 @@
         "latitude": -33.8197,
         "longitude": 151.0067,
         "accuracy": 3,
-        "population": 25,798,
+        "population": 25798,
         "poor_health": 0.15
     },
     {
@@ -73,7 +73,7 @@
         "latitude": -33.8943,
         "longitude": 151.2644,
         "accuracy": 4,
-        "population": 10,045,
+        "population": 10045,
         "poor_health": 0.1
     },
     {
@@ -84,7 +84,7 @@
         "latitude": -33.9,
         "longitude": 150.9333,
         "accuracy": 4,
-        "population": 27,084,
+        "population": 27084,
         "poor_health": 0.18
     },
     {
@@ -95,7 +95,7 @@
         "latitude": -33.7667,
         "longitude": 150.9167,
         "accuracy": 4,
-        "population": 47,176,
+        "population": 47176,
         "poor_health": 0.17
     },
     {
@@ -106,7 +106,7 @@
         "latitude": -34.0667,
         "longitude": 150.8167,
         "accuracy": 4,
-        "population": 12,566,
+        "population": 12566,
         "poor_health": 0.17
     },
     {
@@ -117,7 +117,7 @@
         "latitude": -33.75,
         "longitude": 150.7,
         "accuracy": 4,
-        "population": 13,295,
+        "population": 13295,
         "poor_health": 0.15
     },
     {
@@ -128,7 +128,7 @@
         "latitude": -33.7,
         "longitude": 150.55,
         "accuracy": 4,
-        "population": 8,475,
+        "population": 8475,
         "poor_health": 0.12
     },
     {
@@ -139,7 +139,7 @@
         "latitude": -33.7611,
         "longitude": 151.2745,
         "accuracy": 4,
-        "population": 3,161,
+        "population": 3161,
         "poor_health": 0.08
     },
     {
@@ -150,7 +150,7 @@
         "latitude": -33.8883,
         "longitude": 151.1227,
         "accuracy": 4,
-        "population": 23,841,
+        "population": 23841,
         "poor_health": 0.14
     },
     {
@@ -161,7 +161,7 @@
         "latitude": -33.8974,
         "longitude": 150.9345,
         "accuracy": 4,
-        "population": 21,783,
+        "population": 21783,
         "poor_health": 0.2
     },
     {
@@ -172,7 +172,7 @@
         "latitude": -34.054,
         "longitude": 150.6962,
         "accuracy": 4,
-        "population": 21,783,
+        "population": 21783,
         "poor_health": 0.12
     },
     {
@@ -183,7 +183,7 @@
         "latitude": -34.0841,
         "longitude": 151.013,
         "accuracy": 4,
-        "population": 6,013,
+        "population": 6013,
         "poor_health": 0.11
     },
     {
@@ -194,7 +194,7 @@
         "latitude": -33.9799,
         "longitude": 151.0903,
         "accuracy": 4,
-        "population": 29,822,
+        "population": 29822,
         "poor_health": 0.14
     },
     {
@@ -205,7 +205,7 @@
         "latitude":-33.7333,
         "longitude":151,
         "accuracy":4,
-        "population": 39,594,
+        "population": 39594,
         "poor_health": 0.09
     }
 ]
