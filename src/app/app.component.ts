@@ -80,4 +80,9 @@ export class AppComponent implements OnInit {
         hs.active = !hs.active;
         this.updateBurbs();
     }
+
+    sortSuburbs(suburbs: any[]) {
+        // insert code here
+        return suburbs;
+    }
 }
