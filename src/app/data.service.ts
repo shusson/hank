@@ -10,7 +10,7 @@ export class DataService {
     constructor(private http: HttpClient) {
     }
 
-    getSuburbs() {
+    getSuburbs(): Observable<any> {
         return this.http.get(`${url}/suburbs`);
     }
 
@@ -18,8 +18,12 @@ export class DataService {
         return this.http.get(`${url}/suburbs/${postcode}`);
     }
 
-    getServices(postcode) {
-        return this.http.get(`${url}/suburbs/${postcode}`);
+    getSuburbServices(postcode): Observable<any> {
+        return this.http.get(`${url}/suburbs/${postcode}/services`);
+    }
+
+    getServices(): Observable<any> {
+        return this.http.get(`${url}/services`);
     }
 
     getService(postcode, service) {

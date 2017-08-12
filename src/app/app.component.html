@@ -16,8 +16,8 @@
             <div *ngFor="let s of suburbs">
                 <h4>{{ s.place_name }}</h4>
                 <div *ngFor="let hs of services">
-                    <div class="suburb-service" *ngIf="hs.active && s[hs.name] !== null && s[hs.name] !== undefined">
-                        {{ s[hs.name].length }} {{hs.name}} <md-icon>{{hs.icon}}</md-icon>
+                    <div class="suburb-service" *ngIf="hs.active && s[hs.id] !== null && s[hs.id] !== undefined">
+                        {{ s[hs.id].length }} {{hs.name}} <md-icon>{{hs.icon}}</md-icon>
                     </div>
                 </div>
             </div>
