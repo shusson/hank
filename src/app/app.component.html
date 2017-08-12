@@ -5,7 +5,7 @@
         <md-sidenav #sidenav mode="side" opened="true">
             <md-list>
                 <md-list-item *ngFor="let hs of services">
-                    <md-checkbox class="example-margin" [(ngModel)]="hs.active">
+                    <md-checkbox class="example-margin" [ngModel]="hs.active" (ngModelChange)="updateActive($event, hs)">
                         <span>{{ hs.name }}</span>
                     </md-checkbox>
                 </md-list-item>
@@ -13,17 +13,25 @@
         </md-sidenav>
         <div class="split">
             <div class="main">
-                <div *ngFor="let s of suburbs">
+                <div class="suburb-card" *ngFor="let s of suburbs">
                     <h3>{{ s.place_name }}</h3>
+                    <div class="details">
+                        <span>Population: {{ s.population }}</span>
+                        <span>Unhealthy: {{(s.poor_health * 100).toFixed()}}%</span>
+                        <span>Score: {{s.score}}</span>
+                    </div>
                     <div class="services">
                         <div class="service" *ngFor="let hs of services">
                             <div class="suburb-service" *ngIf="hs.active && s[hs.id] !== null && s[hs.id] !== undefined">
-                                <span class="number">{{ s[hs.id].length }}<span *ngIf="s[hs.id].length === 60">+</span></span> {{hs.name}}
+                                <span class="number">{{ s[hs.id] }}<span *ngIf="s[hs.id] === 60">+</span></span> {{hs.name}}
                             </div>
                         </div>
                     </div>
 
                 </div>
+            </div>
+            <div *ngIf="!redraw">
+                <app-chart [data]="suburbs"></app-chart>
             </div>
         </div>
     </md-sidenav-container>

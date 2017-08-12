@@ -48,3 +48,28 @@ md-sidenav {
 .charts {
     height: 1000px;
 }
+
+
+.details {
+    font-style: italic;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.details .span {
+    margin-right: 15px;
+}
+
+.suburb-card {
+    margin: 10px;
+    position: relative;
+    padding: 1rem;
+    display: inline-block;
+    background-color: #fff;
+    box-shadow: 3px 3px 3px rgba(0,0,0,.1);
+}
+
+h3 {
+    margin-top: 0;
+}
