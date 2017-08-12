@@ -1,6 +1,15 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { postcodes } from './au_postcodes';
 
+
+class Service {
+    constructor(public name: string,
+                public types: string[],
+                public query: string,
+                public active: boolean = false) {
+    }
+}
+
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
@@ -8,6 +17,15 @@ import { postcodes } from './au_postcodes';
 })
 export class AppComponent implements OnInit {
     suburbs = [];
+    services = [
+        new Service("health services", ['hospital', 'doctor'], 'hospital doctor', false),
+        new Service("gym services", ['gym'], 'gym', false),
+        new Service("park services", ['park'], 'park', false),
+        new Service("junk food services", [''], 'Fast Food', true),
+        new Service("pool Services", [], 'Pools', false),
+        new Service("school services", ['school, university', 'library'], 'school', true),
+        new Service("alcohol services", [], 'bottle shop', true),
+    ];
 
     constructor(private cd: ChangeDetectorRef) {
 
@@ -19,9 +37,11 @@ export class AppComponent implements OnInit {
 
         this.suburbs.forEach((s, index: number) => {
             window.setTimeout(() => {
-                this.gmap(s, ['hospital', 'doctor'], 'hospital doctor', "healthServices");
-                this.gmap(s, ['gym'], 'gym', "gymServices");
-                this.gmap(s, ['park'], 'park', "parkServices");
+                this.services.forEach((hs) => {
+                    if (hs.active) {
+                        this.gmap(s, hs.types, hs.query, hs.name);
+                    }
+                });
             }, 1500 * index);
         });
     }
@@ -36,7 +56,7 @@ export class AppComponent implements OnInit {
 
         const request = {
             location: c,
-            radius: '1000',
+            radius: '500',
             type: type,
             query: query,
         };

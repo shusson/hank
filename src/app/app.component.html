@@ -3,17 +3,10 @@
 <div>
     <div *ngFor="let s of suburbs">
         <h4>{{ s.place_name }}</h4>
-        <div *ngIf="s.healthServices !== undefined && s.healthServices !== null">
-            {{ s.healthServices.length }} Health Services
+        <div *ngFor="let hs of services">
+            <div *ngIf="hs.active && s[hs.name] !== null && s[hs.name] !== undefined">
+                {{ s[hs.name].length }} {{hs.name}}
+            </div>
         </div>
-
-        <div *ngIf="s.gymServices !== undefined && s.gymServices !== null">
-            {{ s.gymServices.length }} Gym Services
-        </div>
-
-        <div *ngIf="s.parkServices !== undefined && s.parkServices !== null">
-            {{ s.parkServices.length }} Parks nearby
-        </div>
-
     </div>
 </div>
