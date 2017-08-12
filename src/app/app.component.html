@@ -1,19 +1,28 @@
 <div id="map"></div>
-
-<div>
-    <div *ngFor="let s of suburbs">
-        <h4>{{ s.place_name }}</h4>
-        <div *ngIf="s.healthServices !== undefined && s.healthServices !== null">
-            {{ s.healthServices.length }} Health Services
+<md-toolbar>HealthRank</md-toolbar>
+<div class="overview">
+    <md-sidenav-container class="example-sidenav-fab-container">
+        <md-sidenav #sidenav mode="side" opened="true">
+            <md-list>
+                <md-list-item *ngFor="let hs of services">
+                    <md-checkbox class="example-margin" [ngModel]="hs.active" (ngModelChange)="updateServices(hs)">
+                        <span>{{ hs.name }}</span>
+                    </md-checkbox>
+                </md-list-item>
+            </md-list>
+        </md-sidenav>
+        <div class="main">
+            <button (click)="sortSuburbs()">Sort</button>
+            <div *ngFor="let s of suburbs">
+                <h4>{{ s.place_name }}</h4>
+                <div *ngFor="let hs of services">
+                    <div class="suburb-service" *ngIf="hs.active && s[hs.name] !== null && s[hs.name] !== undefined">
+                        {{ s[hs.name].length }} {{hs.name}} <md-icon>{{hs.icon}}</md-icon>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div *ngIf="s.gymServices !== undefined && s.gymServices !== null">
-            {{ s.gymServices.length }} Gym Services
-        </div>
-
-        <div *ngIf="s.parkServices !== undefined && s.parkServices !== null">
-            {{ s.parkServices.length }} Parks nearby
-        </div>
-
-    </div>
+    </md-sidenav-container>
 </div>
+

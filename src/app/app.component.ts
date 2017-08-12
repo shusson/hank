@@ -1,6 +1,27 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { postcodes } from './au_postcodes';
 
+
+class Service {
+    constructor(public name: string,
+                public types: string[],
+                public query: string,
+                public active: boolean = false,
+                public icon: string = "check") {
+    }
+
+    score(s) {
+        if (!s[this.name]) {
+            return 0;
+        }
+        if (this.icon === "check") {
+            return -s[this.name].length;
+        } else {
+            return s[this.name].length;
+        }
+    }
+}
+
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
@@ -8,20 +29,34 @@ import { postcodes } from './au_postcodes';
 })
 export class AppComponent implements OnInit {
     suburbs = [];
+    services = [
+        new Service("Health services", ['hospital', 'doctor'], 'hospital doctor', true),
+        new Service("Fitness services", [], 'fitness', true),
+        new Service("Junk food restaurants", [''], 'Fast Food', true, "close"),
+        new Service("Parks", ['park'], 'park', false),
+        new Service("Education services", ['school, university', 'library'], 'school', false),
+        new Service("Alcohol services", [], 'bottle shop', false, "close"),
+    ];
 
     constructor(private cd: ChangeDetectorRef) {
 
     }
 
     ngOnInit() {
-        this.suburbs = postcodes.slice(0, 10);
+        this.suburbs = postcodes.slice(0, 3);
         // const s = postcodes.find((p) => p.postcode === 2010);
+        this.updateBurbs();
 
+    }
+
+    updateBurbs() {
         this.suburbs.forEach((s, index: number) => {
             window.setTimeout(() => {
-                this.gmap(s, ['hospital', 'doctor'], 'hospital doctor', "healthServices");
-                this.gmap(s, ['gym'], 'gym', "gymServices");
-                this.gmap(s, ['park'], 'park', "parkServices");
+                this.services.forEach((hs) => {
+                    if (hs.active) {
+                        this.gmap(s, hs.types, hs.query, hs.name);
+                    }
+                });
             }, 1500 * index);
         });
     }
@@ -36,7 +71,7 @@ export class AppComponent implements OnInit {
 
         const request = {
             location: c,
-            radius: '1000',
+            radius: '500',
             type: type,
             query: query,
         };
@@ -50,5 +85,27 @@ export class AppComponent implements OnInit {
             }
             console.log(s);
         });
+    }
+
+    updateServices(hs) {
+        hs.active = !hs.active;
+        this.updateBurbs();
+    }
+
+    sortSuburbs() {
+        this.suburbs.sort((a, b) => {
+            let aScore = 0;
+            this.services.forEach(hs => {
+               aScore += hs.score(a);
+            });
+
+            let bScore = 0;
+            this.services.forEach(hs => {
+                bScore += hs.score(a);
+            });
+
+            return aScore < bScore ? 1 : 0;
+        });
+        this.cd.detectChanges();
     }
 }
