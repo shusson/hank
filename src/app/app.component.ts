@@ -9,6 +9,17 @@ class Service {
                 public active: boolean = false,
                 public icon: string = "check") {
     }
+
+    score(s) {
+        if (!s[this.name]) {
+            return 0;
+        }
+        if (this.icon === "check") {
+            return -s[this.name].length;
+        } else {
+            return s[this.name].length;
+        }
+    }
 }
 
 @Component({
@@ -33,7 +44,6 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         this.suburbs = postcodes.slice(0, 3);
-        this.sortSuburbs(this.suburbs);
         // const s = postcodes.find((p) => p.postcode === 2010);
         this.updateBurbs();
 
@@ -82,9 +92,20 @@ export class AppComponent implements OnInit {
         this.updateBurbs();
     }
 
-    sortSuburbs(suburbs: any[]) {
-        // insert code here
-        console.log(suburbs);
-        return suburbs;
+    sortSuburbs() {
+        this.suburbs.sort((a, b) => {
+            let aScore = 0;
+            this.services.forEach(hs => {
+               aScore += hs.score(a);
+            });
+
+            let bScore = 0;
+            this.services.forEach(hs => {
+                bScore += hs.score(a);
+            });
+
+            return aScore < bScore ? 1 : 0;
+        });
+        this.cd.detectChanges();
     }
 }

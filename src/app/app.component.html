@@ -12,6 +12,7 @@
             </md-list>
         </md-sidenav>
         <div class="main">
+            <button (click)="sortSuburbs()">Sort</button>
             <div *ngFor="let s of suburbs">
                 <h4>{{ s.place_name }}</h4>
                 <div *ngFor="let hs of services">
