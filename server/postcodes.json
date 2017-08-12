@@ -1,4 +1,4 @@
-export const postcodes = [
+[
     {
         "postcode": 2000,
         "place_name": "Sydney",
@@ -36,13 +36,13 @@ export const postcodes = [
         "accuracy": 4
     },
     {
-        "postcode": 2020,
-        "place_name": "Sydney International Airport",
+        "postcode": 1460,
+        "place_name": "Mascot",
         "state_name": "New South Wales",
         "state_code": "NSW",
-        "latitude": -33.939,
-        "longitude": 151.1862,
-        "accuracy": 3
+        "latitude": -33.926,
+        "longitude": 151.1935,
+        "accuracy": 4
     },
     {
         "postcode": 1740,
@@ -178,5 +178,5 @@ export const postcodes = [
         "latitude": -33.9799,
         "longitude": 151.0903,
         "accuracy": 4
-    },
-];
+    }
+]
