@@ -1,4 +1,4 @@
-export const postcodes = [
+[
     {
         "postcode": 2000,
         "place_name": "Sydney",
@@ -37,33 +37,33 @@ export const postcodes = [
     },
     {
         "postcode": 2020,
-        "place_name": "Sydney International Airport",
+        "place_name": "Mascot",
         "state_name": "New South Wales",
         "state_code": "NSW",
-        "latitude": -33.939,
-        "longitude": 151.1862,
-        "accuracy": 3
-    },
-    {
-        "postcode": 1740,
-        "place_name": "Parramatta",
-        "state_name": "New South Wales",
-        "state_code": "NSW",
-        "latitude": -33.7613,
-        "longitude": 151.0294,
-        "accuracy": 1
-    },
-    {
-        "postcode": 1355,
-        "place_name": "Bondi Junction",
-        "state_name": "New South Wales",
-        "state_code": "NSW",
-        "latitude": -33.8928,
-        "longitude": 151.2472,
+        "latitude": -33.926,
+        "longitude": 151.1935,
         "accuracy": 4
     },
     {
-        "postcode": 1871,
+        "postcode": 2150,
+        "place_name": "Parramatta",
+        "state_name": "New South Wales",
+        "state_code": "NSW",
+        "latitude": -33.8197,
+        "longitude": 151.0067,
+        "accuracy": 3
+    },
+    {
+        "postcode": 2026,
+        "place_name": "Bondi",
+        "state_name": "New South Wales",
+        "state_code": "NSW",
+        "latitude": -33.8943,
+        "longitude": 151.2644,
+        "accuracy": 4
+    },
+    {
+        "postcode": 2170,
         "place_name": "Liverpool",
         "state_name": "New South Wales",
         "state_code": "NSW",
@@ -78,15 +78,6 @@ export const postcodes = [
         "state_code": "NSW",
         "latitude": -33.7667,
         "longitude": 150.9167,
-        "accuracy": 4
-    },
-    {
-        "postcode": 2753,
-        "place_name": "Richmond",
-        "state_name": "New South Wales",
-        "state_code": "NSW",
-        "latitude": -33.5996,
-        "longitude": 150.7514,
         "accuracy": 4
     },
     {
@@ -114,15 +105,6 @@ export const postcodes = [
         "state_code": "NSW",
         "latitude": -33.7,
         "longitude": 150.55,
-        "accuracy": 4
-    },
-    {
-        "postcode": 2753,
-        "place_name": "Londonderry",
-        "state_name": "New South Wales",
-        "state_code": "NSW",
-        "latitude": -33.6466,
-        "longitude": 150.7352,
         "accuracy": 4
     },
     {
@@ -171,7 +153,7 @@ export const postcodes = [
         "accuracy": 4
     },
     {
-        "postcode": 1493,
+        "postcode": 2220,
         "place_name": "Hurstville",
         "state_name": "New South Wales",
         "state_code": "NSW",
@@ -179,4 +161,13 @@ export const postcodes = [
         "longitude": 151.0903,
         "accuracy": 4
     },
-];
+    {
+        "postcode":2154,
+        "place_name":"Castle Hill",
+        "state_name":"New South Wales",
+        "state_code":"NSW",
+        "latitude":-33.7333,
+        "longitude":151,
+        "accuracy":4
+    }
+]

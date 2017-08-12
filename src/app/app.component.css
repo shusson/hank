@@ -22,3 +22,13 @@ md-sidenav {
 .suburb-service md-icon {
     margin-left: 10px;
 }
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 300px;
+}
+
+.services .service {
+    margin: 10px;
+}
