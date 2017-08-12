@@ -6,7 +6,8 @@ class Service {
     constructor(public name: string,
                 public types: string[],
                 public query: string,
-                public active: boolean = false) {
+                public active: boolean = false,
+                public icon: string = "check") {
     }
 }
 
@@ -18,13 +19,12 @@ class Service {
 export class AppComponent implements OnInit {
     suburbs = [];
     services = [
-        new Service("health services", ['hospital', 'doctor'], 'hospital doctor', false),
-        new Service("gym services", ['gym'], 'gym', false),
-        new Service("park services", ['park'], 'park', false),
-        new Service("junk food services", [''], 'Fast Food', false),
-        new Service("pool Services", [], 'Pools', false),
-        new Service("school services", ['school, university', 'library'], 'school', false),
-        new Service("alcohol services", [], 'bottle shop', true),
+        new Service("Health services", ['hospital', 'doctor'], 'hospital doctor', true),
+        new Service("Fitness services", [], 'fitness', true),
+        new Service("Junk food restaurants", [''], 'Fast Food', true, "close"),
+        new Service("Parks", ['park'], 'park', false),
+        new Service("Education services", ['school, university', 'library'], 'school', false),
+        new Service("Alcohol services", [], 'bottle shop', false, "close"),
     ];
 
     constructor(private cd: ChangeDetectorRef) {
@@ -33,6 +33,7 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         this.suburbs = postcodes.slice(0, 3);
+        this.sortSuburbs(this.suburbs);
         // const s = postcodes.find((p) => p.postcode === 2010);
         this.updateBurbs();
 
@@ -83,6 +84,7 @@ export class AppComponent implements OnInit {
 
     sortSuburbs(suburbs: any[]) {
         // insert code here
+        console.log(suburbs);
         return suburbs;
     }
 }

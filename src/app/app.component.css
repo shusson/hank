@@ -13,3 +13,12 @@ md-sidenav {
 .main {
     padding: 1rem;
 }
+
+.suburb-service {
+    display: flex;
+    align-items: center;
+}
+
+.suburb-service md-icon {
+    margin-left: 10px;
+}
