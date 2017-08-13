@@ -65,6 +65,7 @@ app.listen(3000, function () {
         key: 'AIzaSyCehdGYzFIE4G9IuGJruh7A1zqFYFbIXZ4'
     });
 
+    // uncomment to generate google map data
     // var places = {};
     //
     // postcodes.forEach(function(pc) {

@@ -90,5 +90,55 @@ export class ChartComponent implements OnInit {
 
             }]
         });
+
+        Highcharts.chart('obese', {
+            chart: {
+                type: 'scatter',
+                zoomType: 'xy'
+            },
+            title: {
+                text: 'Score Vs Obesity'
+            },
+            xAxis: {
+                title: {
+                    enabled: true,
+                    text: 'Score'
+                },
+                startOnTick: true,
+                endOnTick: true,
+                showLastLabel: true
+            },
+            yAxis: {
+                title: {
+                    text: 'Obesity'
+                }
+            },
+            plotOptions: {
+                scatter: {
+                    marker: {
+                        radius: 5,
+                        states: {
+                            hover: {
+                                enabled: true,
+                                lineColor: 'rgb(100,100,100)'
+                            }
+                        }
+                    },
+                    states: {
+                        hover: {
+                            marker: {
+                                enabled: false
+                            }
+                        }
+                    },
+                }
+            },
+            series: [{
+                name: 'Data',
+                color: 'rgba(223, 83, 83, .5)',
+                data: this.data.map(v => [v.score, v.obese])
+
+            }]
+        });
     }
 }

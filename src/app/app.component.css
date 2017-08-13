@@ -13,7 +13,7 @@ md-sidenav {
 .main {
     display: flex;
     flex-wrap: wrap;
-    width: 400px;
+    width: 450px;
 }
 
 .split {
@@ -33,12 +33,16 @@ md-sidenav {
 .services {
     display: flex;
     flex-wrap: wrap;
-    width: 400px;
+    width: 450px;
 }
 
 .services .service {
     margin: 5px;
     min-width: 120px;
+}
+
+.service .label  {
+    min-width: 100px;
 }
 
 .service .number {
@@ -72,4 +76,10 @@ md-sidenav {
 
 h3 {
     margin-top: 0;
+}
+
+.suburb-card img {
+    margin: 1rem;
+    height: auto;
+    width: 200px;
 }

@@ -18,16 +18,19 @@
                     <div class="details">
                         <span>Population: {{ s.population }}</span>
                         <span>Unhealthy: {{(s.poor_health * 100).toFixed()}}%</span>
+                        <span>Obese: {{(s.obese * 100).toFixed()}}%</span>
                         <span>Score: {{s.score}}</span>
                     </div>
                     <div class="services">
                         <div class="service" *ngFor="let hs of services">
                             <div class="suburb-service" *ngIf="hs.active && s[hs.id] !== null && s[hs.id] !== undefined">
-                                <span class="number">{{ s[hs.id] }}<span *ngIf="s[hs.id] === 60">+</span></span> {{hs.name}}
+                                <span class="label">{{hs.name}}</span><span class="number">{{ s[hs.id] }} <span *ngIf="s[hs.id] === 60">+</span></span>
                             </div>
                         </div>
+                        <div>
+                            <img [src]="getImage(s)">
+                        </div>
                     </div>
-
                 </div>
             </div>
             <div *ngIf="!redraw">

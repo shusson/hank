@@ -51,7 +51,7 @@ export class AppComponent implements OnInit {
                 score -= nServiceScore;
             }
         });
-        suburb.score = Math.round(score * 1000);
+        suburb.score = Math.round(score * 100000);
     }
 
     updateActive(active, hs) {
@@ -75,5 +75,9 @@ export class AppComponent implements OnInit {
             }
             return 0;
         });
+    }
+
+    getImage(s) {
+        return "assets/suburbs/" + s.place_name.toLowerCase().replace(/ /g,"_") + ".png";
     }
 }
